@@ -4,7 +4,7 @@ import { Calendar } from '@/components/ui/calendar';
 import { Textarea } from '@/components/ui/textarea';
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { useRouter } from 'next/navigation';
+import { redirect, useRouter } from 'next/navigation';
 
 export default function NewPage() {
   const router = useRouter();
@@ -17,6 +17,7 @@ export default function NewPage() {
     if (!date || !content.trim()) return;
 
     console.log(date, content);
+    router.push('/');
   };
 
   return (
